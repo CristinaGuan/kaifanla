@@ -1,0 +1,57 @@
+<div class="container" >
+    <div class="navbar-form">
+      <form class="form-group has-feedback">
+        <input ng-model="mysearch" type="text" class="form-control" placeholder="搜索菜品名称和原料..." >
+         <span class="glyphicon glyphicon-search form-control-feedback"></span>
+      </form>
+        <button type="button" class="btn btn-info" ng-click="search(mysearch)">Search</button>
+    </div>
+    <div class="alert alert-success formBorder" role="alert" ng-hide="isalert">
+        <p>搜索关键字不能为空</p>
+    </div>
+    <div ng-show="showHome">
+    <div class="media" ng-repeat="d in datalist">
+      <div class="media-left media-middle">
+        <a ng-href="#/dishDetail?did={{d.did}}">
+          <img class="media-object" ng-src="img/{{d.img_sm}}"/>
+        </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{d.name}}</h4>
+          <p>主要食材:{{d.material}}</p>
+          <hr>
+          <span class="d_price">{{d.price | currency:'¥'}}</span>
+        </div>
+    </div>
+  <br>
+   <button id="loadmore" type="button" ng-show="loadmore" class="btn btn-primary btn-block"  ng-click="load()">
+     <span ng-show="isLoading">加载更多</span>
+     <img ng-hide="isLoading"  class="loading" ng-src="img/loading.gif" alt="">
+   </button>
+    
+     <div ng-hide="loadmore" class="alert alert-danger ui-corner-all">已经没有更多数据可加载了！</div>
+
+
+     </div>
+    <div ng-hide="showHome">
+        <div class="media" ng-repeat="d in datalist">
+            <div class="media-left media-middle">
+                <a ng-href="#/dishDetail?did={{d.did}}">
+                    <img class="media-object" ng-src="img/{{d.img_sm}}"/>
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{d.name}}</h4>
+                <p>主要食材:{{d.material}}</p>
+                <hr>
+                <span class="d_price">{{d.price | currency:'¥'}}</span>
+            </div>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary btn-block" ng-disabled="isLoading" ng-click="loadsearch()">
+            <span ng-hide="isLoading">加载更多搜索结果</span>
+            <img ng-show="isLoading" class="loading" ng-src="img/loading.gif" alt="">
+        </button>
+    </div>
+
+</div>

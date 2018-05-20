@@ -1,0 +1,27 @@
+<div class="container" >
+  <div class="panel panel-default">
+     <div class="panel-heading">
+       <a href="#">首页</a>
+       <span>/</span>
+       <a href="#">详情</a>
+     </div>
+    <div class="panel-body">
+      <h2 class="media-heading">{{dDetail.name}}</h2>
+      <hr>
+      <div class="detail_body">
+        <img class="dishImg" ng-src="img/{{dDetail.img_lg}}"/>
+        <div class="dishDetail">
+          <h4>主要食材:</h4>
+          <p class="d_material">{{dDetail.material}}</p>
+          <p>{{dDetail.detail}}</p>
+          <span class="d_price">{{dDetail.price |currency:'¥'}}</span>
+      </div>
+      </div>
+
+    </div>
+    <div class="panel-footer">
+      <button type="button" class="btn btn-success" ng-click="placeAnOrder(dDetail.did)">我要订餐</button>
+      <button type="button" class="btn btn-warning" ng-click="goBack()">我再看看</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="kaifanla">
+<head>
+  <meta charset="UTF-8">
+  <title>开饭啦</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+<!--   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"> -->
+  <style>
+    body{
+      font-family: "Microsoft YaHei";
+    }
+   .media{
+     border: 1px solid #C1C1C1;
+     border-radius: 4px 4px;
+     padding: 15px;
+
+   }
+   .media:hover{
+
+   }
+    .loading{
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+    .detail_body{
+
+      width: 100%;
+      background: #F2F2F2;
+    }
+    .dishImg{
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    p{
+      text-indent: 2em;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+    .dishDetail{
+      padding: 15px;
+    }
+    .d_price{
+      color: #BC1B18;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .panel-footer{
+      text-align: right;
+    }
+    .d_material{
+      font-size: 16px;
+    }
+    a{
+      cursor: pointer;
+    }
+    .myOrderBtn{
+      float: right;
+      z-index: 999;
+      position: absolute;
+      bottom:20px;
+      right: 20px;
+    }
+    .formBorder{
+      border: 1px solid #C1C1C1;
+      border-radius: 4px;
+      padding: 10px;
+      margin-top: 10px;
+     }
+    .footerli  li {
+        width: 33.3%;
+        box-sizing: border-box;
+        float: left;
+        text-align: center;
+    }
+      .ngView{
+          margin-bottom: 70px;
+          margin-top: 45px;
+      }
+
+  </style>
+
+</head>
+<body>
+<div ng-include="'kfl/header.html'"></div>
+<div class="ngView">
+    <div ng-view></div>
+</div>
+
+<div ng-include="'kfl/footer.html'"></div>
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<!--  <script src="js/jquery.mobile-1.4.5.js"></script> -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/angular-animate.js"></script>
+<!--<script src="https://cdn.bootcss.com/angular-sanitize/1.6.6/angular-sanitize.js"></script>-->
+<script src="js/mykfl.js?t=Math.random()">
+</script>
+
+</body>
+</html>

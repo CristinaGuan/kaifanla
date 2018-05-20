@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="page-header"><h3>我的订单</h3></div>
+      <div>
+        <table class='table table-bordered table-striped'>
+          <thead>
+            <tr>
+              <th>订单编号</th>
+              <th>商品</th>
+              <th>下单时间</th>
+              <th>收货人</th>
+            </tr>
+          </thead>
+          <tbody >
+          <tr ng-repeat="oo in Orderdata">
+            <td>{{oo.oid}}</td>
+            <td><a ng-href="#/dishDetail?did={{oo.did}}"><img ng-src="img/{{oo.img_sm}}" alt=""></a></td>
+            <td>{{oo.order_time}}</td>
+            <td>{{oo.addressee}}</td>
+          </tr>
+          </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+
+</div>

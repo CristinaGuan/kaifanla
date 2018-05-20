@@ -1,0 +1,32 @@
+<div class="container">
+  <div>
+      <form class="formBorder" ng-hide="isAlert">
+        <div class="form-group">
+          <label for="inAddressee">联系人:</label>
+          <input class="form-control" type="text" id="inAddressee" ng-model="AOaddressee" ng-required="true">
+
+        </div>
+        <div class="form-group">
+          <label>性别:</label><br>
+          <input type="radio" name="sex" ng-model="AOsex" value="男">&nbsp;先生
+          <input type="radio" name="sex" ng-model="AOsex" ng-checked="true" value="女">&nbsp;女士
+            <p>{{AOsex}}</p>
+        </div>
+        <div class="form-group">
+          <label for="tel">联系电话:</label>
+          <input type="tel" id="tel" class="form-control" placeholder="1871873932" ng-model="AOphone" ng-required="true">
+        </div>
+        <div>
+          <label for="intextarea">送餐地址:</label><br>
+          <textarea id="intextarea" class="form-control" rows="5" placeholder="北京市朝阳区......" ng-model="AOaddr"  ng-required="true"></textarea>
+        </div>
+        <br>
+        <button type="button" class="btn btn-success form-control" ng-click="GoAddOrder(AOaddressee,AOsex,AOphone,AOaddr)">确定下单</button>
+          <a ng-href="#/myOrder">查看我的订单>></a>
+      </form>
+  </div>
+      <div class="alert alert-success formBorder" role="alert" ng-show="isAlert">
+         <p>订餐成功!您的订单编号为: <span>005</span> ,您可以在用户中心查看订单状态。</p>
+      </div>
+
+</div>
